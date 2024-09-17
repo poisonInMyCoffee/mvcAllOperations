@@ -1,0 +1,43 @@
+﻿@model List<First_MVC_App.Models.Employee>
+
+@{
+    ViewBag.Title = "About Us";
+}
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+<h1 style="color: blue; font-weight: 100; text-decoration: underline;">List of Active Employees</h1>
+
+
+@{
+    var a = (First_MVC_App.Models.Employee)ViewData["var1"];
+    var b = ViewBag.var2;
+}
+
+<h2 style="color:aquamarine;font-weight:100;text-decoration:underline;">Through View Data</h2>
+<h3>@a.id</h3>
+<h3>@a.name</h3>
+<h3>@a.age</h3>
+
+<h2 style="color:peru;font-weight:100;text-decoration:underline;">Through View bag</h2>
+<h3>@b.id</h3>
+<h3>@b.name</h3>
+<h3>@b.age</h3>
+
+<h2>Strongly typed view Data</h2>
+@*<h3>@Model.id</h3>
+<h3>@Model.age</h3>
+<h3>@Model.name</h3>*@
+
+<ul>
+   @{ 
+   foreach(var i in Model){
+
+    <li>@i.id</li>
+    <li>@i.name</li>
+    <li>@i.age</li>
+
+}
+}
+    </ul>
+

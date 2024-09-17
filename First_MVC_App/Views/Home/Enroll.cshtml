@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@{Html.BeginForm("About", "Home");
+
+}
+@Html.Label("Username") &nbsp; @Html.TextBox("Username")
+<br />
+<br />
+@Html.Label("Password") &nbsp; @Html.TextBox("Pass")
+<br />
+@Html.Label("Country") &nbsp; @Html.DropDownList(
+"countryList", new SelectList(new[] { "India", "USA", "China", "Russia", "Europe" }), "Select")
+<br />
+<br />
+@Html.Label("Male") &nbsp; @Html.RadioButton("Gender", "Male");
+@Html.Label("Female") &nbsp; @Html.RadioButton("Gender", "female");
+<br />
+@Html.Label("Comments") &nbsp; ; @Html.TextArea("Comment Area", "write here", 5, 20, null)
+<br />
+@Html.CheckBox("Accept Terms", true) &nbsp; @Html.Label("I accept the terms")
+@{
+
+    Html.EndForm();
+}
+
