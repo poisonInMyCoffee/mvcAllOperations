@@ -5,13 +5,31 @@ using System.Web;
 using System.Web.Mvc;
 using First_MVC_App.Models;
 
+
+
 namespace First_MVC_App.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        List<Product> ProductLists = new List<Product>()
         {
+            new Product { id = 32,name="Rayban Sunglasses",price=10000,picture="~/Image/Sunglass.jpg" },
+            new Product { id = 42,name="Rolex Watch",price=1000000,picture="~/Image/Watch.jpg" },
+            new Product { id = 52,name="Shoes",price=1000,picture="~/Image/Shoes.jpg" }
+        };
+
+
+        public ActionResult Index()
+        {ViewBag.message = "This website runs on hope and electricity";
+
             return View();
+        }
+
+        public ActionResult Product()
+        {
+            ViewBag.message = "products on sale";
+
+            return View(ProductLists);
         }
 
         public ActionResult About()
@@ -33,6 +51,11 @@ namespace First_MVC_App.Controllers
             Atul.name = "Atul";
             Atul.age = 55;
 
+            Employee Ajay = new Employee();
+            Ajay.id = 305;
+            Ajay.name = "Ajay";
+            Ajay.age = 45;
+
             ViewData["var1"] = Utk;
             ViewBag.var2 = Utk;
 
@@ -40,6 +63,7 @@ namespace First_MVC_App.Controllers
             emp.Add(Utk);
             emp.Add(Aman);
             emp.Add(Atul);
+            emp.Add(Ajay);
 
 
             return View(emp);

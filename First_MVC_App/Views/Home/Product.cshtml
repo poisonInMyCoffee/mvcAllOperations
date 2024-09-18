@@ -1,0 +1,16 @@
+﻿@model List<First_MVC_App.Models.Product>
+@{
+    ViewBag.Title = "Product";
+
+
+}
+
+<h2>Product</h2>
+
+@{
+    foreach (var item in Model)
+    {
+        Html.RenderPartial("_ProductList", item);
+    }
+}
+
